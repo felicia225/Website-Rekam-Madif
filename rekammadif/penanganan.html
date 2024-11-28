@@ -1,0 +1,204 @@
+<html>
+ <head>
+  <title>
+   PLD UB
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #1a477e;
+            color: white;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            text-align: left;
+            padding-left: 30px;
+        }
+        .sidebar ul li:hover {
+            background-color: #163366;
+            cursor: pointer;
+        }
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .header {
+            background-color: #ecf0f1;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header .profile {
+            display: flex;
+            align-items: center;
+        }
+        .header .profile img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header .profile span {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .form-container h3 {
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-container input[type="text"], .form-container input[type="email"], .form-container select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 3px;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-container .btn-back {
+            background-color: #1a477e;
+            color: white;
+        }
+        .form-container .btn-save {
+            background-color: #1a477e;
+            color: white;
+            float: right;
+        }
+  </style>
+  <script>
+    function saveData() {
+         alert("Terima kasih data anda sudah di rekam");
+         window.location.href = 'dashboard.html';
+     }
+   </script>
+ </head>
+ <body>
+  <div class="sidebar">
+   <h2>
+    PLD UB
+   </h2>
+   <ul>
+    <li onclick="window.location.href='dashboard.html'">
+     <i class="fas fa-tachometer-alt">
+     </i>
+     Dasboard
+    </li>
+    <li onclick="window.location.href='pelapor.html'">
+     <i class="fas fa-user">
+     </i>
+     Pelapor
+    </li>
+    <li onclick="window.location.href='terlapor.html'">
+     <i class="fas fa-user">
+     </i>
+     Terlapor
+    </li>
+    <li onclick="window.location.href='identifikasi.html'">
+     <i class="fas fa-search">
+     </i>
+     Identifikasi awal
+    </li>
+    <li onclick="window.location.href='layanan.html'">
+     <i class="fas fa-hand-holding-heart">
+     </i>
+     Pemberian Layanan
+    </li>
+    <li onclick="window.location.href='rujuk.html'">
+     <i class="fas fa-share-square">
+     </i>
+     Rujuk Lanjutan
+    </li>
+    <li onclick="window.location.href='penanganan.html'">
+     <i class="fas fa-users">
+     </i>
+     Penanganan Keluarga
+    </li>
+   </ul>
+  </div>
+  <div class="content">
+    <div class="header" onclick="window.location.href='profile.html'">
+     <div class="profile">
+      <div>
+       <strong>
+        Admin
+       </strong>
+       <br/>
+       <span>
+        Tersedia
+       </span>
+      </div>
+     </div>
+    </div>
+   <div class="form-container">
+    <form action="penanganan.php" method="post">
+    <h3>
+     Penanganan Keluarga
+    </h3>
+     <label for="nama">
+        Nama Orang Tua /Wali :
+     </label>
+     <input id="nama" type="text" name="nama"/>
+     <label for="nowa">
+        No WhatApp Orang Tua/Wali :
+     </label>
+     <input id="no-whatsapp" type="text" name="wa"/>
+     <label for="Komunikasi">
+        Komunikasi Anak :
+     </label>
+     <input id="Komunikasi" type="text" name="komunikasi"/>
+     <label for="kebiasaan">
+        Kebiasaan Anak :
+     </label>
+     <input id="kebiasaan" type="text" name="kebiasaan"/>
+     <label for="hasil">
+        Hasil Pertemuan Keluarga :
+     </label>
+     <input id="hasil" type="text" name="hasil"/>
+     <button class="btn-back" type="button" onclick="window.location.href='rujuk.html'">
+      Kembali
+     </button>
+     <button class="btn-save" type="submit">
+      Simpan
+     </button>
+    </form>
+   </div>
+  </div>
+ </body>
+</html>

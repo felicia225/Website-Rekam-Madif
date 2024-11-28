@@ -1,0 +1,109 @@
+<html>
+ <head>
+  <title>
+   Sign In
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            width: 600px;
+            height: 285px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .left {
+            background-color: #1a477e;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+        .left img {
+            width: 90%;
+        }
+        .right {
+            background-color: #e0e0e0;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .right h2 {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .right p {
+            margin: 5px 0 20px;
+            font-family: Arial, sans-serif;
+        }
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 30px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-container .fa {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #888;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px 110px;
+            background-color: #1a477e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="left">
+    <form action="login.php" method="POST">
+    <img alt="Logo PLD Unversitas Brawijaya" height="300" src="pld.jpg" width="300"/>
+   </div>
+   <div class="right">
+    <h2>
+     Login
+    </h2>
+    <p>
+    Silahkan login dengan menggunakan username dan password yang anda miliki
+    </p>
+    <div class="input-container">
+     <i class="fa fa-user">
+     </i>
+     <input placeholder="Username" type="text" name="username"/>
+    </div>
+    <div class="input-container">
+     <i class="fa fa-envelope">
+     </i>
+     <input placeholder="Password" type="password" name="password"/>
+    </div>
+    <button type="submit" class="btn">Login</button>
+    </form>
+   </div>
+  </div>
+ </body>
+</html>

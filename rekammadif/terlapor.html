@@ -1,0 +1,241 @@
+<html>
+ <head>
+  <title>
+   PLD UB
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #1a477e;
+            color: white;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            text-align: left;
+            padding-left: 30px;
+        }
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+        .sidebar ul li:hover {
+            background-color: #163366;
+            cursor: pointer;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .header {
+            background-color: #ecf0f1;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header .profile {
+            display: flex;
+            align-items: center;
+        }
+        .header .profile img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header .profile span {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .form-container h3 {
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 3px;
+        }
+        .form-container input[type="radio"] {
+            margin-right: 5px;
+        }
+        .form-container .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-container .btn-back {
+            background-color: #1a477e;
+            color: white;
+        }
+        .form-container .btn-save {
+            background-color: #1a477e;
+            color: white;
+            float: right;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .radio-group label {
+            margin-right: 20px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="sidebar">
+   <h2>
+    PLD UB
+   </h2>
+   <ul>
+    <li onclick="window.location.href='dashboard.html'">
+     <i class="fas fa-tachometer-alt">
+     </i>
+     Dasboard
+    </li>
+    <li onclick="window.location.href='pelapor.html'">
+     <i class="fas fa-user">
+     </i>
+     Pelapor
+    </li>
+    <li onclick="window.location.href='terlapor.html'">
+     <i class="fas fa-user">
+     </i>
+     Terlapor
+    </li>
+    <li onclick="window.location.href='identifikasi.html'">
+     <i class="fas fa-search">
+     </i>
+     Identifikasi awal
+    </li>
+    <li onclick="window.location.href='layanan.html'">
+     <i class="fas fa-hand-holding-heart">
+     </i>
+     Pemberian Layanan
+    </li>
+    <li onclick="window.location.href='rujuk.html'">
+     <i class="fas fa-share-square">
+     </i>
+     Rujuk Lanjutan
+    </li>
+    <li onclick="window.location.href='penanganan.html'">
+     <i class="fas fa-users">
+     </i>
+     Penanganan Keluarga
+    </li>
+   </ul>
+  </div>
+  <div class="content">
+   <div class="header" onclick="window.location.href='profile.html'">
+    <div class="profile">
+     <div>
+      <strong>
+       Admin
+      </strong>
+      <br/>
+      <span>
+       Tersedia
+      </span>
+     </div>
+    </div>
+   </div>
+   <div class="form-container">
+    <form action="terlapor.php" method="post">
+    <h3>
+     Data diri Terlapor
+    </h3>
+     <label for="nama">
+      Nama Terlapor :
+     </label>
+     <input id="nama" name="nama" type="text"/>
+     <label for="gender">
+      Jenis Kelamin :
+     </label>
+     <div class="radio-group">
+      <input id="laki" name="gender" type="radio" value="laki"/>
+      <label for="laki">
+       Laki-laki
+      </label>
+      <input id="perempuan" name="gender" type="radio" value="perempuan"/>
+      <label for="perempuan">
+       Perempuan
+      </label>
+     </div>
+     <label for="nik">
+      NIK/NIM Terlapor :
+     </label>
+     <input id="nik" name="nik" type="text"/>
+     <label for="tempat">
+      Tempat Lahir :
+     </label>
+     <input id="tempat" name="tempat" type="text"/>
+     <label for="tanggal">
+      Tanggal Lahir :
+     </label>
+     <input id="tanggal" name="tanggal" type="text"/>
+     <label for="fakultas">
+      Fakultas Terlapor :
+     </label>
+     <input id="fakultas" name="fakultas" type="text"/>
+     <label for="program">
+      Program Studi/Jurusan Terlapor :
+     </label>
+     <input id="program" name="program" type="text"/>
+     <label for="whatsapp">
+      No WhatsApp :
+     </label>
+     <input id="whatsapp" name="wa" type="text"/>
+     <label for="email">
+      Email :
+     </label>
+     <input id="email" name="email" type="email"/>
+     <div class="buttons">
+        <button class="btn-back" type="button" onclick="window.location.href='pelapor.html'">
+       Kembali
+      </button>
+      <button class="btn-save" type="submit" onclick="window.location.href='identifikasi.html'">
+       Berikutnya
+      </button>
+     </div>
+    </form>
+   </div>
+  </div>
+ </body>
+</html>

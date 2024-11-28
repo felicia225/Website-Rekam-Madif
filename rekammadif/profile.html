@@ -1,0 +1,153 @@
+<html>
+ <head>
+  <title>
+   Profile
+  </title>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #1a477e;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-size: 24px;
+        }
+        .container {
+            background-color: #e0e0e0;
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: -75px;
+            border: 5px solid #e0e0e0;
+            object-fit: cover;
+        }
+        .edit-icon {
+            position: absolute;
+            top: 80px;
+            left: 52%;
+            transform: translateX(50%);
+            background-color: #1a477e;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .form-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        .form-group label {
+            display: inline-block;
+            width: 100px;
+        }
+        .form-group input, .form-group select {
+            width: calc(100% - 120px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group select {
+            width: calc(100% - 120px);
+        }
+        .submit-btn {
+            background-color: #1a477e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #163366;
+        }
+        .file-input {
+            display: none;
+        }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="header">
+   Profil
+  </div>
+  <div class="container">
+    <form action="profil.php" method="POST">
+   <img alt="Profile Photo" class="profile-pic" height="150" id="profilePic" src="profile.jpg" width="150"/>
+   <input accept="image/*" class="file-input" id="fileInput" type="file"/>
+   <i class="fas fa-edit edit-icon" onclick="document.getElementById('fileInput').click();">
+   </i>
+   <div class="form-group">
+    <label for="nama">
+     Nama :
+    </label>
+    <input id="nama" name="nama" type="text"/>
+   </div>
+   <div class="form-group">
+    <label for="status">
+     Status :
+    </label>
+    <select id="status" name="status">
+        <option value="staf admin">
+          Staf Admin
+        </option>
+        <option value=" staf operator">
+          Staf Operator
+        </option>
+        <option value="dosen">
+          Dosen
+        </option>
+        <option value="tenaga kependidikan">
+          Tenaga Kependidikan
+        </option>
+       </select>
+   </div>
+   <div class="form-group">
+    <label for="nik">
+     Nik :
+    </label>
+    <input id="nik" name="nik" type="text"/>
+   </div>
+   <div class="form-group">
+    <label for="email">
+     Email :
+    </label>
+    <input id="email" name="email" type="email"/>
+   </div>
+   <div class="form-group">
+    <label for="wa">
+     No WA :
+    </label>
+    <input id="wa" name="wa" type="text"/>
+   </div>
+   <button type="submit" class="submit-btn">Simpan</button>
+    </form>
+  </div>
+  <script>
+   document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profilePic').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+  </script>
+ </body>
+</html>
